@@ -1,0 +1,46 @@
+{
+
+    "name": "Alamani Store",
+    "short_name": "AlamaniStore",
+    "start_url": "index1",
+    "display": "fullscreen",
+    "background_color": "#FFFFFF",
+    "theme_color": "#FFFFFF",
+    "orientation": "portrait-primary",
+    "icons": [{
+            "src": "logos/logo_72.png",
+            "type": "image/png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "logos/logo_96.png",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "logos/logo_128.png",
+            "type": "image/png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "logos/logo_152.png",
+            "type": "image/png",
+            "sizes": "152x152"
+        },
+        {
+            "src": "logos/logo_192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "logos/logo_384.png",
+            "type": "image/png",
+            "sizes": "384x384"
+        },
+        {
+            "src": "logos/logo_512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}

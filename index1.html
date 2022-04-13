@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#FFE1C4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Weather PWA">
+    <link rel="apple-touch-icon" href="logos/logo_192.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <script src="app.js"></script>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width,initial-scale=1.0'>
+    <title>Document</title>
+    <style>
+        @media all and (display-mode: standalone) {
+            body {
+                background-color: yellow;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        td {
+            padding-top: 5px;
+        }
+        
+        div {
+            text-align: center;
+        }
+        
+        span {
+            color: #fff;
+            position: relative;
+            left: 20px;
+        }
+        
+        .but {
+            text-align: center;
+            margin: 5px 0 10px 0;
+        }
+        
+        button {
+            position: relative;
+            width: 130px;
+            height: 45px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            color: #ffb600;
+            border: 2px solid #ffb600;
+            background-color: transparent;
+            border-radius: 15px;
+        }
+        
+        .note {
+            font-size: 16px;
+        }
+        
+        @media(max-width:767px) {
+            body {
+                position: relative;
+                background: linear-gradient(to bottom, #0b58fd 0%, #020b1e 100%);
+                height: 100vh;
+                width: 100%;
+            }
+            .logo img {
+                position: relative;
+                float: right;
+                margin-right: 12px;
+                width: 100%;
+                max-width: 160px;
+                height: 100px;
+            }
+            table {
+                clear: both;
+                color: #fff;
+                position: relative;
+                font-size: 18px;
+                font-weight: bold;
+                margin-left: auto;
+                margin-right: auto;
+                top: 40px;
+            }
+            q {
+                position: relative;
+                color: #ffb600;
+                left: 20px;
+                font-size: 24px;
+            }
+            .note {
+                text-align: center;
+                font-size: 14px !important;
+            }
+            .m-t {
+                display: block;
+            }
+            .m-t .text {
+                position: relative;
+                margin-left: 30px;
+                font-size: 16px;
+            }
+            .m-t .alamani img {
+                margin-left: 30px;
+                width: 140px;
+                height: 120px;
+            }
+            .m-t .contact {
+                margin-bottom: 0px;
+            }
+            .m-t .contact .t_contact {
+                font-size: 14px;
+            }
+            /* .m-t .contact .t2_c {
+                font-size: 14px;
+                margin-left: 5px;
+            }
+            .m-t .contact .num {
+                position: relative;
+                left: 0 !important;
+                font-size: 14px;
+                margin: 5px;
+                color: #ffb600;
+            } */
+        }
+        
+        @media(min-width:768px) {
+            body {
+                position: relative;
+                background: linear-gradient(to bottom, #0b58fd 0%, #020b1e 100%);
+                height: 100vh;
+                width: 100%;
+            }
+            .logo img {
+                position: relative;
+                float: right;
+                margin-right: 20px;
+                width: 100%;
+                max-width: 160px;
+                height: 100px;
+            }
+            table {
+                clear: both;
+                color: #fff;
+                position: relative;
+                font-size: 30px;
+                font-weight: bold;
+                margin-left: auto;
+                margin-right: auto;
+                top: 100px;
+            }
+            q {
+                position: relative;
+                color: #ffb600;
+                font-size: 32px;
+                left: 30px;
+            }
+            .note {
+                text-align: center;
+                font-size: 16px !important;
+            }
+            .m-t {
+                display: block;
+            }
+            .m-t .text {
+                font-size: 20px;
+                margin: 5px 0px 0px 50px;
+            }
+            .m-t .alamani img {
+                margin-left: 50px;
+                width: 190px;
+                height: 150px;
+            }
+            /* .m-t .contact .t_contact {
+                font-size: 15px;
+            }
+            .m-t .contact .t2_c {
+                font-size: 15px;
+                margin-left: 5px !important;
+            }
+            .m-t .contact .num {
+                position: relative;
+                left: 0 !important;
+                font-size: 14px;
+                margin: 5px;
+                color: #ffb600;
+            } */
+        }
+        
+        @media(min-width:992px) {
+            .m-t {
+                display: none !important;
+            }
+            body {
+                background-image: url('media.jpg');
+                background-repeat: no-repeat;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+            table {
+                color: #fff;
+                position: relative;
+                float: right;
+                font-size: 26px;
+                font-weight: bold;
+                right: 80px;
+                top: 100px;
+            }
+            q {
+                color: #ffb600;
+                font-size: 30px;
+            }
+        }
+        
+        @media(min-width:1200px) {
+            .m-t {
+                display: none !important;
+            }
+            body {
+                background-image: url('laptop.jpg');
+                background-repeat: no-repeat;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                min-height: 610px;
+            }
+            table {
+                color: #fff;
+                position: relative;
+                float: right;
+                font-size: 24px;
+                font-weight: bold;
+                right: 130px;
+                top: 120px;
+            }
+            q {
+                color: #ffb600;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="installContainer" class="hidden">
+        <button id="butInstall" class="butInstall" type="button">
+         Install
+        </button>
+    </div>
+    <div class='logo m-t'><img src='logo.png' alt='الاماني'></div>
+    <table>
+        <tr>
+            <td>
+                <div>انت&nbsp;الان&nbsp;في&nbsp;سوق</div>
+            </td>
+        </tr>
+        <tr>
+            <td><q>شركة&nbsp;الاماني&nbsp;الالكتروني&nbsp;</q></td>
+        </tr>
+        <tr>
+            <td><span>لمواصلة&nbsp;استخدام&nbsp;السوق&nbsp;الالكتروني</span></td>
+        </tr>
+        <tr>
+            <td>
+                <div class='but'><button>اضغط&nbsp;هنا</button></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class='note'>في حال عدم الفتح عند النقر على 'اضغط هنا' نرجو ابلاغنا</p>
+                <p class='note'> عبر واتساب خدمة الزبائن عن طريق الضغط على الرابط</p>
+            </td>
+        </tr>
+        <tr class='m-t'>
+            <td>
+                <div class='text'>أمنياتنا&nbsp;أن&nbsp;تكون&nbsp;جميع&nbsp;تعاملاتكم&nbsp;معنا</div>
+                <div class='text'>تحقق&nbsp;مقولتنا</div>
+                <div class='alamani'><img src='alamani.png' alt='الاماني'></div>
+                <!-- <div class="contact">
+                    <div class='t_contact'>العراق-كربلاء&nbsp;المقدسة&nbsp;حي&nbsp;البلدية&nbsp;قرب&nbsp;الاطفاء</div>
+                    <div class='t2_c'><span class='num'>6007</span>خدمة&nbsp;الزبائن</div>
+                </div> -->
+            </td>
+        </tr>
+
+    </table>
+    <script>
+        // $('.butInstall').click(function(){
+        //     console.log("j");
+        //                 if(appInstallPrompt){
+        //                     appInstallPrompt.prompt();
+        //                     appInstallPrompt.userChoice.then((endResult) => {
+        //                       console.log("j " + endResult.outcome);
+        //                     });
+        //                     appInstallPrompt = null;
+        //                 }
+        //  });
+        // function getPWADisplayMode() {
+        //     const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+        //     if (document.referrer.startsWith('android-app://')) {
+        //         return 'twa';
+        //     } else if (navigator.standalone || isStandalone) {
+        //         return 'standalone';
+        //     }
+        //     return 'browser';
+        // }
+        // let deferredPrompt;
+        // window.addEventListener('beforeinstallprompt', (event) => {
+        //     // Prevent the mini-infobar from appearing on mobile.
+        //     event.preventDefault();
+        //     console.log('👍', 'beforeinstallprompt', event);
+        //     // Stash the event so it can be triggered later.
+        //     deferredPrompt = event;
+        //     // showInstallPromotion();
+        //     // Remove the 'hidden' class from the install button container.
+        //     // divInstall.classList.toggle('hidden', false);
+        // });
+        // var divInstall = document.getElementById('installContainer');
+        // var butInstall = document.getElementById('butInstall');
+        // if (butInstall) {
+
+        //     butInstall.addEventListener('click', async() => {
+        //         getPWADisplayMode();
+        //         // console.log('👍', 'butInstall-clicked');
+        //         // const promptEvent = deferredPrompt;
+        //         // if (!promptEvent) {
+        //         //     // The deferred prompt isn't available.
+        //         //     return;
+        //         // }
+        //         // // Show the install prompt.
+        //         // promptEvent.prompt();
+        //         // // Log the result
+        //         // const result = await promptEvent.userChoice;
+        //         // console.log('👍', 'userChoice', result);
+        //         // // Reset the deferred prompt variable, since
+        //         // // prompt() can only be called once.
+        //         // deferredPrompt = null;
+        //         // // Hide the install button.
+        //         // divInstall.classList.toggle('hidden', true);
+        //         // hideInstallPromotion();
+        //         // Show the install prompt
+        //         deferredPrompt.prompt();
+        //         // Wait for the user to respond to the prompt
+        //         const {
+        //             outcome
+        //         } = await deferredPrompt.userChoice;
+        //         // Optionally, send analytics event with outcome of user choice
+        //         console.log(`User response to the install prompt: ${outcome}`);
+        //         // We've used the prompt, and can't use it again, throw it away
+        //         deferredPrompt = null;
+        //     });
+
+        //     window.addEventListener('appinstalled', () => {
+        //         // Hide the app-provided install promotion
+        //         // hideInstallPromotion();
+        //         // Clear the deferredPrompt so it can be garbage collected
+        //         deferredPrompt = null;
+        //         // Optionally, send analytics event to indicate successful install
+        //         console.log('PWA was installed');
+        //     });
+
+        //     window.matchMedia('(display-mode: standalone)').addEventListener('change', (evt) => {
+        //         let displayMode = 'browser';
+        //         if (evt.matches) {
+        //             displayMode = 'standalone';
+        //         }
+        //         // Log display mode change to analytics
+        //         console.log('DISPLAY_MODE_CHANGED', displayMode);
+        //     });
+        // }
+
+        let deferredPrompt;
+        const addBtn = document.querySelector('.butInstall');
+        // addBtn.style.display = 'none';
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent Chrome 67 and earlier from automatically showing the prompt
+            e.preventDefault();
+            // Stash the event so it can be triggered later.
+            deferredPrompt = e;
+            // Update UI to notify the user they can add to home screen
+            addBtn.style.dsisplay = 'block';
+
+            addBtn.addEventListener('click', (e) => {
+                // Show the prompt
+                deferredPrompt.prompt();
+                // Wait for the user to respond to the prompt
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        addBtn.style.display = 'none';
+                        console.log('User accepted install');
+                    } else {
+                        console.log('User dismissed install');
+                    }
+                    deferredPrompt = null;
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
